@@ -1,0 +1,217 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #252525;
+}
+
+a {
+  text-decoration: none;
+  color: #252525;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  font-weight: 300;
+}
+
+.loading {
+  margin: 0 auto;
+}
+
+.btn {
+  text-transform: uppercase;
+  margin: 35px auto;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.29);
+  cursor: pointer;
+  background: #fff;
+  font-size: 16px;
+  width: 250px;
+  position: relative;
+}
+
+.btn:hover {
+  border-color: rgba(0,0,0,.5);
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 0;
+  font-weight: 700;
+  border-width: 2px;
+}
+
+.center {
+  text-align: center;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.dashboard-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+
+.dashboard-toggle button {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+}
+
+.dashboard-list {
+  font-size: 18px;
+  letter-spacing: .4px;
+}
+
+.dashboard-list a:hover {
+  font-weight: 600;
+}
+
+.add-poll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option-input {
+  width: 400px;
+  font-size: 20px;
+}
+
+.poll-container {
+  width: 70%;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.card {
+  width: 49%;
+  height: 200px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+  overflow: scroll;
+  position: relative;
+  border: 1px solid black;
+}
+
+.card:hover {
+  box-shadow: 1.5px 1.5px rgba(0, 0, 0, 0.4)
+}
+
+.or {
+  border: 1px solid black;
+  background: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  line-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.decision-text-answered {
+  font-size: 25px;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 10px;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+.percentage {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.agree {
+  color: rgba(0, 0, 0, 0.30);
+  margin: 8px;
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.user {
+  display: flex;
+}
+
+.user h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+.user p {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 500px) {
+  .poll-container {
+    width: 95%;
+    flex-direction: column;
+  }
+  .card {
+    margin: 45px;
+    width: 100%;
+  }
+}
