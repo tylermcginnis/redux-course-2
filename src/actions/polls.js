@@ -19,9 +19,14 @@ export function receivePolls (polls) {
 }
 
 export function handeAddPoll (poll) {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const { authedUser } = getState()
+
     dispatch(showLoading())
-    return savePoll(poll)
+    return savePoll({
+      ...poll,
+      author: authedUser,
+    })
       .then((poll) => dispatch(addPoll(poll)))
       .then(() => dispatch(hideLoading()))
   }

@@ -169,6 +169,10 @@ let polls = {
   },
 }
 
+function generateUID () {
+  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+}
+
 export function _getUsers () {
   return new Promise((res, rej) => {
     setTimeout(() => res({...users}), 1000)
@@ -183,12 +187,24 @@ export function _getPolls () {
 
 export function _savePoll (poll) {
   return new Promise((res, rej) => {
+    const id = generateUID()
+    const formattedPoll = {
+      ...poll,
+      id,
+      timestamp: Date.now(),
+      aVotes: [],
+      bVotes: [],
+      cVotes: [],
+      dVotes: [],
+    }
+
     setTimeout(() => {
       polls = {
         ...polls,
-        [poll.id]: poll
+        [id]: formattedPoll
       }
-      res(polls)
+
+      res(formattedPoll)
     }, 1000)
   })
 }

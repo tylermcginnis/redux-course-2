@@ -56,7 +56,7 @@ export function getInitialData () {
 }
 
 export function savePoll (poll) {
-  return _savePoll()
+  return _savePoll(poll)
 }
 
 export function savePollAnswer (args) {
