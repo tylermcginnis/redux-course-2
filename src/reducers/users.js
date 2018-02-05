@@ -27,7 +27,7 @@ export default function users (state = {}, action) {
         ...state,
         [author]: {
           ...state[author],
-          questions: state[author].questions.concat([id])
+          polls: state[author].polls.concat([id])
         }
       }
     default :

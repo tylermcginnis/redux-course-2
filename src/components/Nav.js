@@ -17,7 +17,7 @@ export default function Nav () {
         </li>
         <li>
           <NavLink to='/add' activeClassName='active'>
-            Add Question
+            Add Poll
           </NavLink>
         </li>
       </ul>

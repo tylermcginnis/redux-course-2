@@ -12,15 +12,11 @@ export function addAnswer ({ authedUser, id, answer }) {
   }
 }
 
-export function handleAddAnswer ({ authedUser, id, answer }) {
+export function handleAddAnswer (answerData) {
   return (dispatch) => {
     dispatch(showLoading())
-    savePollAnswer(id, answer)
-      .then(() => dispatch(addAnswer({
-        authedUser,
-        id,
-        answer,
-      })))
+    savePollAnswer(answerData)
+      .then(() => dispatch(addAnswer(answerData)))
       .then(() => dispatch(hideLoading()))
   }
 }

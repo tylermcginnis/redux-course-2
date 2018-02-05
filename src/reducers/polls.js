@@ -16,15 +16,13 @@ export default function polls (state = {}, action) {
     case ADD_ANSWER :
       const { answer, id, authedUser } = action
       const poll = state[id]
-      const votersKey = answer + 'Voters'
-      const countKey = answer + 'Count'
+      const votesKey = answer + 'Votes'
 
       return {
         ...state,
         [action.id]: {
           ...poll,
-          [votersKey]: poll[votersKey].concat([authedUser]),
-          [countKey]: poll[countKey] + 1
+          [votesKey]: poll[votesKey].concat([authedUser]),
         }
       }
     default :
