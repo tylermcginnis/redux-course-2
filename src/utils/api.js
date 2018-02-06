@@ -57,6 +57,7 @@ export function getInitialData () {
 
 export function savePoll (poll) {
   return _savePoll(poll)
+    .then((p) => flattenPoll(p))
 }
 
 export function savePollAnswer (args) {

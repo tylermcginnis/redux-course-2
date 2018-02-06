@@ -16,7 +16,7 @@ export default function users (state = {}, action) {
         ...state,
         [action.authedUser]: {
           ...user,
-          answers: user.answers.concat([action.qid])
+          answers: user.answers.concat([action.id])
         }
       }
     case ADD_POLL :

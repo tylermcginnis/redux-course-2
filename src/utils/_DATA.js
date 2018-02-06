@@ -185,23 +185,38 @@ export function _getPolls () {
   })
 }
 
+function formatPoll (poll) {
+  return {
+    ...poll,
+    id: generateUID(),
+    timestamp: Date.now(),
+    a: {
+      text: poll.a,
+      votes: [],
+    },
+    b: {
+      text: poll.b,
+      votes: [],
+    },
+    c: {
+      text: poll.c,
+      votes: [],
+    },
+    d: {
+      text: poll.d,
+      votes: [],
+    },
+  }
+}
+
 export function _savePoll (poll) {
   return new Promise((res, rej) => {
-    const id = generateUID()
-    const formattedPoll = {
-      ...poll,
-      id,
-      timestamp: Date.now(),
-      aVotes: [],
-      bVotes: [],
-      cVotes: [],
-      dVotes: [],
-    }
+    const formattedPoll = formatPoll(poll)
 
     setTimeout(() => {
       polls = {
         ...polls,
-        [id]: formattedPoll
+        [formattedPoll.id]: formattedPoll,
       }
 
       res(formattedPoll)
@@ -227,16 +242,17 @@ export function _savePollAnswer ({ authedUser, id, answer }) {
       }
 
       polls = {
-        ...poll,
+        ...polls,
         [id]: {
-          ...poll[id],
-          votes: poll[id].votes.concat([authedUser])
+          ...poll,
+          [answer]: {
+            ...poll[answer],
+            votes: poll[answer].votes.concat([authedUser])
+          }
         }
       }
 
-      console.log('Check These then delete')
-      console.log('New Users: ', user)
-      console.log('New Polls: ', polls)
+      res()
     }, 200)
   })
 }
