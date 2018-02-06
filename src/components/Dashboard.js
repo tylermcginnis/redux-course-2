@@ -7,14 +7,14 @@ class Dashboard extends Component {
     showAnswered: false,
   }
   showAnswered = () => {
-    this.setState({
-      showAnswered: true,
-    })
+    this.setState(() => ({
+      showAnswered: true
+    }))
   }
   showUnanswered = () => {
-    this.setState({
-      showAnswered: false,
-    })
+    this.setState(() => ({
+      showAnswered: false
+    }))
   }
   render () {
     const { showAnswered } = this.state

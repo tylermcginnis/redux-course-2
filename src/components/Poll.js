@@ -5,9 +5,9 @@ import { getPercentage, getTextKeys, getVoteKeys } from '../utils/helpers'
 
 class Poll extends Component {
   handleAnswer = (answer) => {
-    this.answered = true
-
     const { poll, authedUser } = this.props
+
+    this.answered = true
 
     this.props.dispatch(handleAddAnswer({
       authedUser,
@@ -16,11 +16,11 @@ class Poll extends Component {
     }))
   }
   render() {
-    const { poll, vote, authorAvatar } = this.props
-
-    if (poll === null) {
+    if (this.props.poll === null) {
       return <p>This poll doesn't exist</p>
     }
+
+    const { poll, vote, authorAvatar } = this.props
 
     const totalVotes = getVoteKeys()
       .reduce((total, key) => total + poll[key].length, 0)
