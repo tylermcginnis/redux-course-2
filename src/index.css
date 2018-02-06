@@ -16,10 +16,6 @@ a {
   padding: 10px;
 }
 
-.header {
-  font-weight: 300;
-}
-
 .loading {
   margin: 0 auto;
 }
@@ -139,11 +135,6 @@ li {
   align-items: center;
 }
 
-.option-input {
-  width: 400px;
-  font-size: 20px;
-}
-
 .poll-container {
   width: 60%;
   margin: 0px auto;
@@ -161,73 +152,6 @@ li {
   height: 40px;
   border-radius: 20px;
   margin-top: 10px;
-}
-
-.card {
-  width: 49%;
-  height: 200px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 40px;
-  box-sizing: border-box;
-  overflow: scroll;
-  position: relative;
-  border: 1px solid black;
-}
-
-.card:hover {
-  box-shadow: 1.5px 1.5px rgba(0, 0, 0, 0.4)
-}
-
-.or {
-  border: 1px solid black;
-  background: white;
-  height: 60px;
-  width: 60px;
-  border-radius: 30px;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  line-height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
-
-.decision-text-answered {
-  font-size: 25px;
-  position: absolute;
-  bottom: 0;
-  padding-bottom: 10px;
-  text-align: center;
-  left: 0;
-  right: 0;
-}
-
-.percentage {
-  font-size: 45px;
-  font-weight: bold;
-}
-
-.agree {
-  color: rgba(0, 0, 0, 0.30);
-  margin: 8px;
-}
-
-.icon {
-  height: 40px;
-  width: 40px;
-  position: absolute;
-  top: 5px;
-  right: 5px;
 }
 
 .user {
@@ -255,10 +179,6 @@ li {
   .poll-container {
     width: 95%;
     flex-direction: column;
-  }
-  .card {
-    margin: 45px;
-    width: 100%;
   }
 }
 

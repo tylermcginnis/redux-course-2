@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddAnswer } from '../actions/answers'
 import { getPercentage, getTextKeys, getVoteKeys } from '../utils/helpers'
-import Checked from 'react-icons/lib/io/ios-checkmark-outline'
 
 class Poll extends Component {
   handleAnswer = (answer) => {
+    this.answered = true
+
     const { poll, authedUser } = this.props
 
     this.props.dispatch(handleAddAnswer({
@@ -15,7 +16,12 @@ class Poll extends Component {
     }))
   }
   render() {
-    const { poll, vote, authorAvatar, authedUser } = this.props
+    const { poll, vote, authorAvatar } = this.props
+
+    if (poll === null) {
+      return <p>This poll doesn't exist</p>
+    }
+
     const totalVotes = getVoteKeys()
       .reduce((total, key) => total + poll[key].length, 0)
 
@@ -33,7 +39,11 @@ class Poll extends Component {
 
             return (
               <li
-                onClick={() => vote === null && this.handleAnswer(key[0])}
+                onClick={() => {
+                  if (vote === null && !this.answered) {
+                    this.handleAnswer(key[0])
+                  }
+                }}
                 className={`option ${vote === key[0] ? 'chosen' : ''}`}
                 key={key}>
                   {vote === null
