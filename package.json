@@ -1,8 +1,7 @@
 {
-  "name": "polls",
+  "name": "redux-course-2",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://tylermcginnis.com/projects/redux-polls/",
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

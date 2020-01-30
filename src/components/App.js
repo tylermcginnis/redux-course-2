@@ -18,7 +18,7 @@ class App extends Component {
   }
   render() {
     return (
-      <Router basename={'/projects/redux-polls'}>
+      <Router>
         <Fragment>
           <LoadingBar />
           <div className='container'>
